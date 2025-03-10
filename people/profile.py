@@ -14,11 +14,11 @@ print(aiman_profile.get_first_name())
 aiman_profile.set_first_name("PRABLEEN")
 print(aiman_profile.get_first_name())
 
-aiman_profile.get_age()
-print(aiman_profile.get_age())
+# aiman_profile.set_age()
+# print(aiman_profile.set_age())
 
 aiman_profile.set_age(18)
-print(aiman_profile.get_age())
+print(aiman_profile.set_age(18))
 
 # employee
 new_employee = Employee('Prableen','Gujral','Research Assistant','Full-time',20000,3)

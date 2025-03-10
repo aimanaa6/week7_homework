@@ -1,18 +1,18 @@
 from people.accounts import Account,SavingsAccount,GraduateAccount
-from people.accounts import InsufficientFundsException
+# from people.accounts import InsufficientFundsException
 
 account_one = Account("POP09", 1000)
 # NEW variable using Account Class
 saving_account_one = SavingsAccount("C4RT67", 5000, 0.02, 3000)
 grad_account_one = GraduateAccount("PL890", 2000, 500, 4)
 
-# print(account_one.deposit(500))
-# print(account_one.withdraw(300))
-# print(saving_account_one.apply_interest())
-# print(grad_account_one.withdraw(2500))
+print(account_one.deposit(500))
+print(account_one.withdraw(300))
+print(saving_account_one.apply_interest())
+print(grad_account_one.withdraw(2500))
 # Exceeds balance but within overdraft limit
-# print(grad_account_one.withdraw(3000))
-# print(saving_account_one.display_withdrawal_allowance())
+print(grad_account_one.withdraw(3000))
+print(saving_account_one.display_withdrawal_allowance())
 
 
 try:

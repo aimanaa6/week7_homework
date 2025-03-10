@@ -1,16 +1,32 @@
-class InsufficientFundsException(Exception):
-    # exception class - inherits from the Exception Class in Python
-    """
-    Exception Class
+# class InsufficientFundsException():
+#     # exception class - inherits from the Exception Class in Python
+#     """
+#     Exception Class
+#
+#     """
+#     def __init__(self, message="Insufficient funds for this transaction"):
+#         # dunder __init__ constructor takes message as a parameter
+#         super().__init__(self.message)
+#         # calling argument
+#         # super() calls parent class
 
-    """
-    def __init__(self, message="Insufficient funds for this transaction"):
-        # dunder __init__ constructor takes message as a parameter
-        super().__init__(self.message)
-        # calling argument
-        # super() calls parent class      def display_info(self):
+class Account:
+    def __init__(self, account_number, balance):
+        self._account_number = account_number
+        self._balance = balance
+
+    def deposit(self, amount):
+        self._balance += amount
+        return f"Deposited {amount}. New balance: {self._balance}"
+
+    def withdraw(self, amount):
+        if amount > self._balance:
+            return "Insufficient funds"
+        self._balance -= amount
+        return f"Withdrew {amount}. New balance: {self._balance}"
+
+    def display_info(self):
         return f"Account Number: {self._account_number}, Balance: {self._balance}"
-    # getter - read only account details
 
 class SavingsAccount(Account):
     def __init__(self, account_number, balance, interest_rate,withdrawal_allowance):
@@ -20,7 +36,7 @@ class SavingsAccount(Account):
         self._withdrawal_allowance = withdrawal_allowance
     # adding two more attributes alongside base class
 
-    def apply_interest(self):
+    def add_interest(self):
         self._balance += self._balance * self._interest_rate
         return f"Interest applied. New balance: {self._balance}"
     # use * as the overload operator to multiply both attributes
