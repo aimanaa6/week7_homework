@@ -7,6 +7,8 @@ aiman_profile = Person('Aiman','Ahmed',23)
 print(aiman_profile)
 
 aiman_profile.get_first_name()
+# aiman_profile = object
+# get_first_name() = method (function inside the class) called on the object (aiman_profile)
 print(aiman_profile.get_first_name())
 
 aiman_profile.set_first_name("PRABLEEN")
